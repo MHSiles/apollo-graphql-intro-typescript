@@ -17,3 +17,16 @@ export type TrackModel = {
   explicit: boolean;
   uri: string;
 };
+
+// The response from the Spotify API when adding tracks to a playlist
+export type SnapshotOrError = {
+  snapshot_id?: string;
+  error?: string;
+};
+
+export type AddTracksToPlaylistResponse = {
+  code: number;
+  success: boolean;
+  message: string;
+  playlistId: string;
+};
