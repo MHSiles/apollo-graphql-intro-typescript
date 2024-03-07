@@ -1,7 +1,15 @@
 type Query {
+  "Get a single playlist by its ID."
+  playlist(id: ID!): Playlist
+  "Get all the available playlists."
   featuredPlaylists: [Playlist!]!
+  "Get a single track by its ID."
+  tracks: [Track!]!
 }
 
+"""
+TYPES
+"""
 type Playlist {
   "The ID of the playlist."
   id: ID!
@@ -9,4 +17,20 @@ type Playlist {
   name: String!
   "Describes the playlist and its content."
   description: String
+  "The tracks in the playlist."
+  tracks: [Track!]!
+}
+
+"A single audio file, usually a song."
+type Track {
+  "The ID for the track."
+  id: ID!
+  "The name of the track"
+  name: String!
+  "The track length in milliseconds."
+  durationMs: Int!
+  "Whether or not the track has explicit lyrics (true = yes it does; false = no it does not OR unknown)"
+  explicit: Boolean!
+  "The URI for the track, usually a Spotify link."
+  uri: String!
 }

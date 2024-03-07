@@ -8,6 +8,10 @@ const config: CodegenConfig = {
       config: {
         // Path relative to the src/types file
         contextType: "./context#DataSourceContext",
+        mappers: {
+          Playlist: "./models#PlaylistModel",
+          Track: "./models#TrackModel",
+        }
       },
     },
   },
