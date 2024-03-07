@@ -1,0 +1,12 @@
+type Query {
+  featuredPlaylists: [Playlist!]!
+}
+
+type Playlist {
+  "The ID of the playlist."
+  id: ID!
+  "The name of the playlist."
+  name: String!
+  "Describes the playlist and its content."
+  description: String
+}
